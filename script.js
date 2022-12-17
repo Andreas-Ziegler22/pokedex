@@ -19,6 +19,8 @@ const colors = {
   normal: "#F5F5F5",
 };
 
+const main_types = Object.keys(colors);
+
 const fetchPokemons = async () => {
   for (let i = 1; i <= pokemon_count; i++) {
     await getPokemon(i);
@@ -51,7 +53,7 @@ const createPokemonCard = (pokemon) => {
   />
 </div>
 <div class="info">
-  <span class="number">${id}</span>
+  <span class="number">#${id}</span>
   <h3 class="name">${firstUppercaseName}</h3>
   <small class="type">Type: <span>grass</span></small>
 </div>
