@@ -43,6 +43,9 @@ const createPokemonCard = (pokemon) => {
 
   const id = pokemon.id.toString().padStart(3, "0");
 
+  const poke_types = pokemon.types.map((type) => type.type.name);
+  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
+
   const pokemonTemplateInnerHTML = `
   <div class="img-container">
   <img
@@ -55,7 +58,7 @@ const createPokemonCard = (pokemon) => {
 <div class="info">
   <span class="number">#${id}</span>
   <h3 class="name">${firstUppercaseName}</h3>
-  <small class="type">Type: <span>grass</span></small>
+  <small class="type">Type: <span>${type}</span></small>
 </div>
   `;
 
