@@ -39,7 +39,9 @@ const createPokemonCard = (pokemon) => {
   const pokemonTemplateInnerHTML = `
   <div class="img-container">
   <img
-    src="https://pokeres.bastionbot.org/images/pokemon/1.png"
+    src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.id
+      .toString()
+      .padStart(3, "0")}.png"
     alt=""
   />
 </div>
@@ -49,6 +51,10 @@ const createPokemonCard = (pokemon) => {
   <small class="type">Type: <span>grass</span></small>
 </div>
   `;
+
+  pokeElement.innerHTML = pokemonTemplateInnerHTML;
+
+  poke_container.appendChild(pokeElement);
 };
 
 fetchPokemons();
