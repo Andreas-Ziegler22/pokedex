@@ -29,6 +29,26 @@ const getPokemon = async (id) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data);
+  createPokemonCard(data);
 };
+
+const createPokemonCard = (pokemon) => {
+  const pokeElement = document.createElement("div");
+  pokeElement.classList.add("pokemon");
+
+  const pokemonTemplateInnerHTML = `
+  <div class="img-container">
+  <img
+    src="https://pokeres.bastionbot.org/images/pokemon/1.png"
+    alt=""
+  />
+</div>
+<div class="info">
+  <span class="number">#001</span>
+  <h3 class="name">Bulbasaur</h3>
+  <small class="type">Type: <span>grass</span></small>
+</div>
+  `;
+};
+
 fetchPokemons();
