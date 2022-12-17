@@ -38,16 +38,16 @@ h1 {
 }
 
 .pokemon .img-container {
-  background-color: rgba(255, 255, 255, 0, 6);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   text-align: center;
 }
 
 .pokemon .img-container img {
   max-width: 90%;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .pokemon .info {
