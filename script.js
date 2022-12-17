@@ -36,6 +36,9 @@ const createPokemonCard = (pokemon) => {
   const pokeElement = document.createElement("div");
   pokeElement.classList.add("pokemon");
 
+  const firstUppercaseName =
+    pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
   const pokemonTemplateInnerHTML = `
   <div class="img-container">
   <img
@@ -46,8 +49,8 @@ const createPokemonCard = (pokemon) => {
   />
 </div>
 <div class="info">
-  <span class="number">#001</span>
-  <h3 class="name">Bulbasaur</h3>
+  <span class="number">${pokemon.id}</span>
+  <h3 class="name">${firstUppercaseName}</h3>
   <small class="type">Type: <span>grass</span></small>
 </div>
   `;
